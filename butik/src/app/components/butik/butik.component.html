@@ -1,0 +1,12 @@
+<div style="margin-top: 50px;  padding-left: 50px;">
+<div class="card-group" style="gap: 100px;">
+<div *ngFor="let item of items$ | filter:filterText" >
+
+  <butik-item [image]="item.image" [rozmiar]="item.rozmiar" [title]="item.title" [price]="item.price" [id]="item.id">
+  </butik-item>
+  </div>
+
+</div>
+</div>
+
+

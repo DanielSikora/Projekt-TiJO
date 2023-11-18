@@ -1,0 +1,60 @@
+<section class="editPost container">
+  <h1 class="entry-title"><span>Edit Post</span></h1><hr style="width: 200px;">
+  <form class="form-horizontal" method="post" name="signup" id="signup">
+    <div class="form-group">
+      <label class="control-label col-sm-3">Title<span class="text-danger">*</span></label>
+      <div class="col-md-3 col-sm-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="text" class="form-control" name="text" id="title"
+                 placeholder="Wpisz tytuł aukcji" value="" [(ngModel)]="credentials.title">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3">Image<span class="text-danger">*</span></label>
+      <div class="col-md-3 col-sm-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <input type="text" class="form-control" name="image" id="image" placeholder="Zdjęcie"
+                 value="" [(ngModel)]="credentials.image">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3">Opis<span class="text-danger">*</span></label>
+      <div class="col-md-3 col-sm-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <textarea class="form-control textarea-resize" name="text" id="text"
+                    placeholder="Opis" [(ngModel)]="credentials.text"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3">Rozmiar<span class="text-danger">*</span></label>
+      <div class="col-md-3 col-sm-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="number" class="form-control" name="rozmiar" id="rozmiar"
+                 placeholder="Rozmiar" value="" [(ngModel)]="credentials.rozmiar">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-3">Cena<span class="text-danger">*</span></label>
+      <div class="col-md-3 col-sm-8">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="number" class="form-control" name="cena" id="cena"
+                 placeholder="Cena" value="" [(ngModel)]="credentials.price">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-xs-offset-3 col-xs-10">
+        <button (click)="updatePost()" type="button" class="btn btn-primary" style="background-color: red;">Aktualizuj</button>
+      </div>
+    </div>
+  </form>
+</section>

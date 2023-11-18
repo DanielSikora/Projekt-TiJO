@@ -1,0 +1,13 @@
+<div style="margin-top: 7%;  padding-left: 33%;">
+<div class="card" style="width: 30rem;">
+  <img class="card-img-top" [src]="image" alt="text">
+  <div class="card-body">
+    <h3 class="card-title">{{ title }}</h3>
+    <p class="card-text">Opis: {{ text }}</p>
+    <p class="card-text">Rozmiar: {{ rozmiar }}</p>
+    <p class="card-text">Cena: {{ price }} zł</p>
+    <div class="d-flex">
+      <button (click)="deletePost()" type="button" class="btn btn-primary mr-2" style="margin-right: 15px;">Kup</button>
+      <button (click)="updatePost()" type="button" class="btn btn-primary" style="background-color: red;">Edytuj</button>
+    </div>
+</div>

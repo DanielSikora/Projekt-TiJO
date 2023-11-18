@@ -1,0 +1,10 @@
+.addPost {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  
+.textarea-resize {
+    height: 150px; /* Dostosuj wysokość do preferencji */
+    resize: vertical; /* Umożliwia pionowe zmienianie rozmiaru */
+}
+  
