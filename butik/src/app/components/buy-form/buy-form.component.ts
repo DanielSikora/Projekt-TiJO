@@ -11,6 +11,7 @@ import { DataService } from "../../services/data.service";
 export class BuyFormComponent implements OnInit {
   isFormValid: boolean = false;
   public purchaseMessage: string = '';
+  public countdown: number = 15;
 
   public title: string = '';
   public image: string = '';
@@ -38,9 +39,19 @@ export class BuyFormComponent implements OnInit {
         this.id = res['id'];
       });
     });
+
+    const timer = setInterval(() => {
+      if (this.countdown > 0) {
+        this.countdown--;
+      } else {
+        clearInterval(timer);
+        this.router.navigate(['/butik']);
+      }
+    }, 1000); 
   }
 
   checkFormValidity() {
+    
     const formInputs = document.querySelectorAll<HTMLInputElement>('#myForm input[required]');
     this.isFormValid = true;
 
@@ -55,9 +66,6 @@ export class BuyFormComponent implements OnInit {
     if (this.authService.isLoggedIn()) {
       this.service.deletePost(this.id).subscribe(() => {
         this.purchaseMessage = 'Buciki zamówione!';
-        setTimeout(() => {
-          this.router.navigate(['/butik']);
-        }, 10000);
       });
     }
   }
