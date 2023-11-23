@@ -9,6 +9,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {SignupComponent} from "./components/signup/signup.component";
 import {AddPostComponent} from "./components/add-post/add-post.component";
 import { EditComponent } from './components/edit/edit.component';
+import { BuyFormComponent } from './components/buy-form/buy-form.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,11 @@ const routes: Routes = [
   {
     path: 'addPost',
     component: AddPostComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'butik/buyForm/:id',
+    component: BuyFormComponent,
     canActivate: [AuthGuard]
   },
 

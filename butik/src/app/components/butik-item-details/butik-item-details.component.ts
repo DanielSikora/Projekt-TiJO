@@ -53,4 +53,10 @@ export class butikItemDetailsComponent implements OnInit {
       this.router.navigate(['/edit', this.id])
     }
   }
+
+  buyPost() {
+    if(this.authService.isLoggedIn()){
+      this.router.navigate(['/butik/buyForm', this.id])
+    }
+  }
 }
