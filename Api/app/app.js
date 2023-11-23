@@ -19,7 +19,7 @@ app.use(cors());
 
 mongoose.connect(config.databaseUrl, {
     useNewUrlParser: true,
-    dbName: "Butik",
+    dbName: "butik",
 }, (error) => {
     if (error) {
         console.error(error);
