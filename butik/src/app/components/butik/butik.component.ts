@@ -10,6 +10,8 @@ export class butikComponent implements OnInit {
   @Input() filterText: string = '';
   public items$: any;
   public filteredItems$: any;
+  public minPrice: number | undefined;
+  public maxPrice: number | undefined;
 
   constructor(private service: DataService) {}
 
@@ -19,17 +21,20 @@ export class butikComponent implements OnInit {
 
   getAll() {
     this.service.getAll().subscribe(response => {
+      this.filterText = '';
       this.items$ = response;
       this.applyFilter();
     });
   }
 
   applyFilter() {
-    if (this.items$ && this.filterText) {
-      this.filteredItems$ = this.items$.filter(
-        (item: any) =>
-          item.title.toLowerCase().includes(this.filterText.toLowerCase())
-      );
+    if (this.items$) {
+      this.filteredItems$ = this.items$.filter((item: any) => {
+        const titleMatch = item.title.toLowerCase().includes(this.filterText.toLowerCase());
+        const priceMatch = (this.minPrice === undefined || item.price >= this.minPrice) &&
+                           (this.maxPrice === undefined || item.price <= this.maxPrice);
+        return titleMatch && priceMatch;
+      });
     } else {
       this.filteredItems$ = this.items$;
     }
