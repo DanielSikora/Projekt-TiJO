@@ -30,7 +30,9 @@
                     <label for="price">Cena:</label>
                     <input type="text" class="form-control" id="price" placeholder="Wprowadź cenę" required>
                 </div>
-                <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!isFormValid">Wyślij</button>
+                <div class="d-flex justify-content-center" style="margin-top: 20px;">
+                    <button type="button" class="btn btn-primary" (click)="onSubmit()" [disabled]="!isFormValid">Wyślij</button>
+                </div>
             </form>
         </div>
     </div>

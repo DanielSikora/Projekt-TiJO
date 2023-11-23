@@ -58,6 +58,6 @@ export class BuyFormComponent {
       });
       this.router.navigate(['/butik']);
     }
-    console.log('Form submitted!');
+    
   }
 }
