@@ -35,6 +35,7 @@ export class butikComponent implements OnInit {
     }
   }
 
+  
   onFilterTextChange() {
     this.applyFilter();
   }

@@ -1,7 +1,7 @@
 <div style="margin-top: 7%; padding-left: 33%;">
-    <div class="card" style="width: 30rem;">
-        <div class="card-body">
-            <form id="myForm" (input)="checkFormValidity()">
+    <div class="card" style="width: 30rem;" *ngIf="!purchaseMessage">
+      <div class="card-body">
+        <form id="myForm" (input)="checkFormValidity()">
                 <div class="form-group">
                     <label for="name">Imię:</label>
                     <input type="text" class="form-control" id="name" placeholder="Wprowadź imię" required>
@@ -36,4 +36,10 @@
             </form>
         </div>
     </div>
-</div>
+    <div *ngIf="purchaseMessage" class="card" style="width: 30rem;">
+        <div class="card-body">
+          <p>{{ purchaseMessage }}</p>
+          <p>Przeniesienie na stronę główną za 10 sekund...</p>
+        </div>
+      </div>
+    </div>

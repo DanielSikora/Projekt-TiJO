@@ -1,15 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import {DataService} from "../../services/data.service";
+import { DataService } from "../../services/data.service";
 
 @Component({
   selector: 'app-buy-form',
   templateUrl: './buy-form.component.html',
   styleUrls: ['./buy-form.component.css']
 })
-export class BuyFormComponent {
+export class BuyFormComponent implements OnInit {
   isFormValid: boolean = false;
+  public purchaseMessage: string = '';
 
   public title: string = '';
   public image: string = '';
@@ -18,26 +19,25 @@ export class BuyFormComponent {
   public price: number = 0;
   public id: string = '';
 
-  constructor(private service: DataService, private route: ActivatedRoute, private authService: AuthService, public router: Router) {
-  }
+  constructor(
+    private service: DataService,
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    public router: Router
+  ) {}
 
   ngOnInit() {
-    let id: string = '';
-    this.route.paramMap
-      .subscribe((params: any) => {
-        id = params.get('id');
+    this.route.paramMap.subscribe((params: any) => {
+      const id = params.get('id');
+      this.service.getById(id).subscribe((res: any) => {
+        this.image = res['image'];
+        this.title = res['title'];
+        this.text = res['text'];
+        this.rozmiar = res['rozmiar'];
+        this.price = res['price'];
+        this.id = res['id'];
       });
-
-    this.service.getById(id).subscribe((res: any) => {
-      this.image = res['image'];
-      this.title = res['title'];
-      this.text = res['text'];
-      this.rozmiar = res['rozmiar'];
-      this.price = res['price'];
-      this.id = res['id'];
-
     });
-
   }
 
   checkFormValidity() {
@@ -52,12 +52,13 @@ export class BuyFormComponent {
   }
 
   onSubmit() {
-    if(this.authService.isLoggedIn()) {
-      this.service.deletePost(this.id).subscribe((result) => {
-        return result;
+    if (this.authService.isLoggedIn()) {
+      this.service.deletePost(this.id).subscribe(() => {
+        this.purchaseMessage = 'Buciki zamówione!';
+        setTimeout(() => {
+          this.router.navigate(['/butik']);
+        }, 10000);
       });
-      this.router.navigate(['/butik']);
     }
-    
   }
 }
