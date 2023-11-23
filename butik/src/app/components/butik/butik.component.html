@@ -1,5 +1,5 @@
-<div style="margin-top: 50px; padding-left: 50px;">
-  <input type="text" [(ngModel)]="filterText" placeholder="Wyszukaj po nazwie..." (input)="onFilterTextChange()">
+<div style="margin-top: 50px; text-align: center;">
+  <input type="text" [(ngModel)]="filterText" placeholder="Wyszukaj po nazwie..." (input)="onFilterTextChange()" style="width: 300px; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
   <div class="card-group" style="gap: 100px;">
     <div *ngFor="let item of filteredItems$">
       <butik-item [image]="item.image" [rozmiar]="item.rozmiar" [title]="item.title" [price]="item.price" [id]="item.id">
