@@ -28,6 +28,7 @@ import { AddPostComponent } from './components/add-post/add-post.component';
 import { EditComponent } from './components/edit/edit.component';
 import { CheckNumbersPipe } from './pipes/check-numbers.pipe';
 import { PriceColorDirective } from './directives/price-color.directive';
+import { BuyFormComponent } from './components/buy-form/buy-form.component';
 
 
 
@@ -54,6 +55,7 @@ import { PriceColorDirective } from './directives/price-color.directive';
     EditComponent,
     CheckNumbersPipe,
     PriceColorDirective,
+    BuyFormComponent,
 
 
 
