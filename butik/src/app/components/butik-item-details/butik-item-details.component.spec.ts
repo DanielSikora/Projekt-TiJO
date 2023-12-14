@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/services/auth.service';
 import { of } from 'rxjs';
 import { DataService } from '../../services/data.service';
 import { butikItemDetailsComponent } from './butik-item-details.component';
+import { AppModule } from 'src/app/app.module';
 
 describe('ButikItemDetailsComponent', () => {
   let component: butikItemDetailsComponent;
@@ -125,4 +126,6 @@ describe('ButikItemDetailsComponent', () => {
     // Then
     expect(mockRouter.navigate).not.toHaveBeenCalled();
   });
+
+  
 });

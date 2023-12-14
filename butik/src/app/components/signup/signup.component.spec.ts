@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SignupComponent } from './signup.component';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
 
 
 describe('SignupComponent', () => {
@@ -45,5 +45,21 @@ describe('SignupComponent', () => {
     expect(authService.createOrUpdate).toHaveBeenCalledWith(component.credentials);
     expect(router.navigate).toHaveBeenCalledWith(['/']);
   });
+
+  it('should navigate to "/" only on successful user creation', () => {
+    // given
+    const successResponse = {};
+    authService.createOrUpdate.and.returnValue(of(successResponse));
+  
+    // when
+    component.create();
+  
+    // then
+    expect(authService.createOrUpdate).toHaveBeenCalledWith(component.credentials);
+    expect(router.navigate).toHaveBeenCalledWith(['/']); // should navigate on success
+    expect(router.navigate).toHaveBeenCalledTimes(1); // should navigate exactly once
+  });
+
+  
   
 });
