@@ -17,7 +17,7 @@
       <div class="d-flex ms-auto">
         <div class="d-flex" *ngIf="!authService.isLoggedIn()">
           <a class="nav-link" href="#" [routerLink]="['/login']">Zaloguj</a>
-          <span class="mx-2"></span> <!-- Margines między logowaniem a rejestracją -->
+          <span class="mx-2"></span>
           <a class="nav-link" href="#" [routerLink]="['/signup']">Zarejestruj</a>
         </div>
         <button *ngIf="authService.isLoggedIn()" class="btn nav-link" (click)="signOut()">Wyloguj</button>
