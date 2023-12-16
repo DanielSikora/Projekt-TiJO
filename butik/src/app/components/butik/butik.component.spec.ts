@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { DataService } from '../../services/data.service';
-import { ButikComponent } from './butik.component';
+import { butikComponent } from './butik.component';
 
 describe('ButikComponent', () => {
-  let component: ButikComponent;
-  let fixture: ComponentFixture<ButikComponent>;
+  let component: butikComponent;
+  let fixture: ComponentFixture<butikComponent>;
   let mockDataService: jasmine.SpyObj<DataService>;
 
   beforeEach(() => {
     mockDataService = jasmine.createSpyObj('DataService', ['getAll']);
 
     TestBed.configureTestingModule({
-      declarations: [ButikComponent],
+      declarations: [butikComponent],
       providers: [{ provide: DataService, useValue: mockDataService }],
     });
 
-    fixture = TestBed.createComponent(ButikComponent);
+    fixture = TestBed.createComponent(butikComponent);
     component = fixture.componentInstance;
   });
 

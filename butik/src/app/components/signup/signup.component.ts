@@ -8,6 +8,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  error(error: any) {
+    throw new Error('Method not implemented.');
+  }
 
   public credentials = {
     name: '',

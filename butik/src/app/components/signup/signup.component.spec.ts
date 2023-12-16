@@ -59,6 +59,19 @@ describe('SignupComponent', () => {
     expect(router.navigate).toHaveBeenCalledWith(['/']); // should navigate on success
     expect(router.navigate).toHaveBeenCalledTimes(1); // should navigate exactly once
   });
+  it('should handle authService.createOrUpdate returning false and navigate to "/"', () => {
+    // given
+    authService.createOrUpdate.and.returnValue(of(false));
+  
+    // when
+    component.create();
+  
+    // then
+    expect(authService.createOrUpdate).toHaveBeenCalledWith(component.credentials);
+    expect(router.navigate).toHaveBeenCalledWith(['/']); // should navigate on success (false response)
+  });
+ 
+  
 
   
   
