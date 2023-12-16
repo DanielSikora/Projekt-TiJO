@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
             password: ''
           };
           this.router.navigate(['/']);
+          this.errorMessage = '';
         }
       },
       (error) => {
@@ -45,5 +46,5 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-  
+
 }
