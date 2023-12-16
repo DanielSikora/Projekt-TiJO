@@ -61,20 +61,19 @@ describe('BuyFormComponent', () => {
     expect(component.purchaseMessage).toEqual('Buciki zamówione!');
   });
 
+
+it('should not attempt to delete post when user is not logged in', () => {
+    // given
+    authService.isLoggedIn.and.returnValue(false);
   
-
-  
-
-  
-
-  it('should delete post when user is logged in and submitting the form', () => {
-    authService.isLoggedIn.and.returnValue(true);
-    service.deletePost.and.returnValue(of(''));
-
+    // when
     component.id = 'mockId';
     component.onSubmit();
+  
+    // then
+    expect(service.deletePost).not.toHaveBeenCalled();
+});
 
-    expect(service.deletePost).toHaveBeenCalledWith('mockId');
-    expect(component.purchaseMessage).toEqual('Buciki zamówione!');
-  });
+
+
 });

@@ -39,5 +39,11 @@ Api jest dostępne pod adresem:```http://localhost:3001```
 ```ng serve```
 
 Api jest dostępne pod adresem:```http://localhost:4200```
+### Uruchomienie testów jednostkowych oraz integracyjnych:
+```cd butik```
 
+```ng test```
+
+Wyniki testów odpalają się domyślnie w przeglądarce chrome:
+![Testy](./Testy.png)
 

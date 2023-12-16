@@ -41,6 +41,8 @@ describe('LoginComponent', () => {
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
   });
 
+  
+
   it('should reset credentials on successful login', () => {
     // Given
     authServiceSpy.authenticate.and.returnValue(of(true));
@@ -75,26 +77,10 @@ describe('LoginComponent', () => {
     // Then
     expect(component.errorMessage).toBe('Wystąpił błąd podczas logowania');
   });
-  it('should create the LoginComponent', () => {
-    // Given
-    
-    // When
   
-    // Then
-    expect(component).toBeTruthy();
-  });
   
 
-  it('should navigate to "/" on successful login', () => {
-    // Given
-    authServiceSpy.authenticate.and.returnValue(of(true));
-    
-    // When
-    component.signIn();
-    
-    // Then
-    expect(routerSpy.navigate).toHaveBeenCalledWith(['/']);
-  });
+ 
   
 
   it('should reset credentials on successful login', () => {

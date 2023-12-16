@@ -127,5 +127,10 @@ describe('ButikItemDetailsComponent', () => {
     expect(mockRouter.navigate).not.toHaveBeenCalled();
   });
 
+
+
+
+
+  
   
 });
