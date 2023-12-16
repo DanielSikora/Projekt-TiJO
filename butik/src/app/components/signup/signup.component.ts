@@ -25,10 +25,21 @@ export class SignupComponent implements OnInit {
   }
 
   create() {
-    this.authService.createOrUpdate(this.credentials).subscribe((result) => {
-      return result;
-    });
-    this.router.navigate(['/']);
+    this.authService.createOrUpdate(this.credentials).subscribe(
+      (result) => {
+        if (result) {
+          this.router.navigate(['/']);
+        } else {
+          console.log('Operation failed or returned false');
+          
+        }
+      },
+      (error) => {
+       
+        console.error('An error occurred:', error);
+        
+      }
+    );
   }
 }
 
