@@ -81,6 +81,7 @@ Wyniki testów odpalają się domyślnie w przeglądarce chrome:
 
 ## Technologie użyte w projekcie:
 * ###   JavaScript
+* ###  Typescript
 * ###  Angular
 * ###  Node.js
 * ###  HTML
@@ -88,4 +89,5 @@ Wyniki testów odpalają się domyślnie w przeglądarce chrome:
 * ###  RxJS
 * ###  Jest
 * ###  Jasmin
+
 
