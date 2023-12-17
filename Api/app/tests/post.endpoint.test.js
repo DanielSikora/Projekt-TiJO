@@ -27,29 +27,29 @@ describe('Create post endpoint', () => {
   it('should retrieve all posts and respond with 200 status code', async () => {
     // Given
   
-    // When - wykonanie operacji pobrania wszystkich postów
+    // When 
     const response = await request(app)
       .get('/api/posts');
   
-    // Then - weryfikacja odpowiedzi
+    // Then 
     expect(response.status).toBe(200);
-    expect(response.body).toBeDefined(); // Sprawdź, czy ciało odpowiedzi jest zdefiniowane
-    expect(Array.isArray(response.body)).toBeTruthy(); // Sprawdź, czy ciało odpowiedzi jest tablicą
+    expect(response.body).toBeDefined(); 
+    expect(Array.isArray(response.body)).toBeTruthy(); 
     
   });
   it('should retrieve a single post and respond with 200 status code', async () => {
-    // Given - przygotowanie danych (np. znalezienie istniejącego posta)
+    // Given - istniejący post
   
-    // When - wykonanie operacji pobrania pojedynczego postu
+    // When 
     const response = await request(app)
       .get('/api/posts/55f3f2ce800e141f21ddf65'); 
   
-    // Then - weryfikacja odpowiedzi
+    // Then 
     expect(response.status).toBe(200);
     
   });
   it('should retrieve a single post', async () => {
-    // Given 
+    // Given istneijący post
     // When
     const response = await request(app)
       .get('/api/posts/655f3e50e800e141f21ddf4e');
@@ -62,7 +62,7 @@ describe('Create post endpoint', () => {
 
     // When
     const updatedData = {
-      // dane do aktualizacji posta, użyj nieistniejącego ID lub innych danych
+      
     };
     const response = await request(app)
       .put('/api/posts/wadasdad')
@@ -70,7 +70,7 @@ describe('Create post endpoint', () => {
   
     // Then
     expect(response.status).toBe(404);
-    // Oczekujemy statusu 404, ponieważ nie ma posta do aktualizacji
+    
 
   });
   it('should handle errors for creating a post without data', async () => {
@@ -78,7 +78,7 @@ describe('Create post endpoint', () => {
 
     // When
     const incompletePostData = {
-      // Brak jednego lub więcej pól wymaganych
+      
     };
     const response = await request(app)
       .post('/api/posts')
@@ -86,7 +86,7 @@ describe('Create post endpoint', () => {
 
     // Then
     expect(response.status).toBe(400);
-    // Oczekujemy statusu 400, ponieważ dane są niekompletne
+    
 
   });
   it('should handle errors for updating a post with invalid ID', async () => {
@@ -94,7 +94,7 @@ describe('Create post endpoint', () => {
 
     // When
     const updatedData = {
-      // dane do aktualizacji posta, użyj nieprawidłowego ID lub innych danych
+      
     };
     const response = await request(app)
       .put('/api/posts/invalid_id')
@@ -102,7 +102,7 @@ describe('Create post endpoint', () => {
   
     // Then
     expect(response.status).toBe(404);
-    // Oczekujemy statusu 404, ponieważ podane ID jest nieprawidłowe
+    
 
   });
   it('should handle errors for deleting without ID', async () => {
@@ -140,7 +140,7 @@ describe('Create post endpoint', () => {
 
     // Then
     expect(response.status).toBe(400);
-    // Oczekujemy statusu 400, ponieważ dane są niekompletne
+    
 
   });
 

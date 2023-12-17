@@ -39,7 +39,7 @@ Api jest dostępne pod adresem:```http://localhost:3001```
 ```ng serve```
 
 Api jest dostępne pod adresem:```http://localhost:4200```
-### Uruchomienie testów jednostkowych oraz integracyjnych:
+### Uruchomienie testów jednostkowych:
 ```cd butik```
 
 ```ng test```
@@ -47,3 +47,34 @@ Api jest dostępne pod adresem:```http://localhost:4200```
 Wyniki testów odpalają się domyślnie w przeglądarce chrome:
 ![Testy](./Testy.png)
 
+### Uruchomienie testów integracyjnych:
+```cd Api```
+
+```npm test```
+
+![Testy](./itest.png)
+## Scenariusze:
+| Test Case ID | Opis                                                           | Kroki testowe                                                                                                                 | Oczekiwany wynik                                                                    |
+|-------------|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
+| TC_01       | Wejście na stronie /addPosts nie będąc zalogowanym.            | 1. Przy uruchomieniu aplikacji dopisz do linku /addPosts                                                                      | Strona nie zostanie przekierowana na podaną, ponieważ warunki nie zostału spełnione |
+| TC_02       | Podanie niewłaściwych danych logowania.                        | 1. Kliknięcie w ikonkę w prawym górnym rogu "Zaloguj".<br/>2. Wpisanie niewłaściwych danych logowania.                        | Wyskoczy komunikat "Wystąpił błąd podczas logowania.                                |
+| TC_03       | Próba rejestracji konta wpisując 2 różne hasła.                | 1. Kliknięcie w ikonkę w prawym górnym rogu "Zarejestruj".<br/> 2. Stwórz konto próbując wpisać błędnie potwierdzające hasło. | Konto użytkownika nie zostanie utworzone.                                           |
+| TC_04       | Próba poprawnego zalogowania.                                  | 1. Podanie prawidłowych danych na ekranie logowania.<br/> 2. Kliknięcie przycisku "zaloguj".                                  | Użykownik zostanie zalogowany                                                       |
+| TC_05       | Próba rejestracji konta.                                       | 1. Kliknięcie w ikonkę w prawym górnym rogi "Zarejestruj".<br/> 2. Wpisanie poprawnie danych                                  | Użytkownik zostanie utworzony                                                       |
+| TC_06       | Dodanie ogłoszenia.                                            | 1. Zalogowanie się na konto.<br/> 2. Wejście w zakłądke "Dodaj ogłoszenie".<br/> 3. Wypełnienie danych.                       | Post zostanie utworzony.                                                            |
+| TC_07       | Próba wpisania przy tworzenie ogłoszenia liter w rubryce cena. | 1. Zalogowanie się na konto.<br/> 2. Wejście w zakładkę "Dodaj ogłoszenie".<br/> 3. Próba wpisania liter w rubryce ogłoszenia | Nie jest możliwe wpisanie                                                           |
+| TC_08       | Testowanie poprawnego działa czyszczenie filtru.               | 1. Wejście w ogłoszenia.<br/> 2. Wypełnienie rubryk danymi. 3.<br/> Kliknięcie przycisku "Wyczyść filtry"                     | Rubryki z danymi zostaną wyczyszczone.                                              |
+| TC_09       | Zakupienie butów.                                              | 1. Wejście w ogłoszenia.<br/> 2. Wybranie butów.<br/> 3. Kliknięcie przycisku "zakup"                                         | Post zostanie usunięty z ogłoszeń                                                   |
+| TC_10       | Edytowanie danych z ogłoszeń                                   | 1. Wybranie ogłoszenia.<br/> 2. Kliknięcie przycisk "Edytuj".<br/> 3. Zmiana danych. Potwierdzając przyciskiem aktualizuj.    | Konto użytkownika nie zostanie utworzone.                                           |
+| TC_01       | Wejście na stronie /addPosts nie będąc zalogowanym.            | 1. Przy uruchomieniu aplikacji dopisz do linku /addPosts                                                                      | Strona nie zostanie przekierowana na podaną, ponieważ warunki nie zostału spełnione |
+| TC_02       | Podanie niewłaściwych danych logowania.                        | 1. Kliknięcie w ikonkę w prawym górnym rogu "Zaloguj".<br/>2. Wpisanie niewłaściwych danych logowania.                        | Wyskoczy komunikat "Wystąpił błąd podczas logowania.                                |
+| TC_03       | Próba rejestracji konta wpisując 2 różne hasła.                | 1. Kliknięcie w ikonkę w prawym górnym rogu "Zarejestruj".<br/> 2. Stwórz konto próbując wpisać błędnie potwierdzające hasło. | Konto użytkownika nie zostanie utworzone.                                           |
+| TC_04       | Próba poprawnego zalogowania.                                  | 1. Podanie prawidłowych danych na ekranie logowania.<br/> 2. Kliknięcie przycisku "zaloguj".                                  | Użykownik zostanie zalogowany                                                       |
+| TC_05       | Próba rejestracji konta.                                       | 1. Kliknięcie w ikonkę w prawym górnym rogi "Zarejestruj".<br/> 2. Wpisanie poprawnie danych                                  | Użytkownik zostanie utworzony                                                       |
+| TC_06       | Dodanie ogłoszenia.                                            | 1. Zalogowanie się na konto.<br/> 2. Wejście w zakłądke "Dodaj ogłoszenie".<br/> 3. Wypełnienie danych.                       | Post zostanie utworzony.                                                            |
+| TC_07       | Próba wpisania przy tworzenie ogłoszenia liter w rubryce cena. | 1. Zalogowanie się na konto.<br/> 2. Wejście w zakładkę "Dodaj ogłoszenie".<br/> 3. Próba wpisania liter w rubryce ogłoszenia | Nie jest możliwe wpisanie                                                           |
+| TC_08       | Testowanie poprawnego działa czyszczenie filtru.               | 1. Wejście w ogłoszenia.<br/> 2. Wypełnienie rubryk danymi. 3.<br/> Kliknięcie przycisku "Wyczyść filtry"                     | Rubryki z danymi zostaną wyczyszczone.                                              |
+| TC_09       | Zakupienie butów.                                              | 1. Wejście w ogłoszenia.<br/> 2. Wybranie butów.<br/> 3. Kliknięcie przycisku "zakup"                                         | Post zostanie usunięty z ogłoszeń                                                   |
+| TC_10       | Edytowanie danych z ogłoszeń                                   | 1. Wybranie ogłoszenia.<br/> 2. Kliknięcie przycisk "Edytuj".<br/> 3. Zmiana danych. Potwierdzając przyciskiem aktualizuj.    | Konto użytkownika nie zostanie utworzone.                                           |
+
+1. Przy uruchomieniu aplikacji dopisz do linku /addPosts 
