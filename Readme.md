@@ -33,12 +33,12 @@ Filtrowanie dostępne jest po nazwie produktu,cenie oraz rozmiarze butów, co u�
 ```npm start```
 
 Api jest dostępne pod adresem:```http://localhost:3001```
-### Uruchomienie Api:
+### Uruchomienie Aplikacji:
 ```cd butik```
 
 ```ng serve```
 
-Api jest dostępne pod adresem:```http://localhost:4200```
+Aplikacja jest dostępna pod adresem:```http://localhost:4200```
 ### Uruchomienie testów jednostkowych:
 ```cd butik```
 
