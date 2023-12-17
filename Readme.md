@@ -54,6 +54,7 @@ Wyniki testów odpalają się domyślnie w przeglądarce chrome:
 
 ![Testy](./itest.png)
 ## Scenariusze:
+
 | Test Case ID | Opis                                                           | Kroki testowe                                                                                                                 | Oczekiwany wynik                                                                    |
 |-------------|----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|
 | TC_01       | Wejście na stronie /addPosts nie będąc zalogowanym.            | 1. Przy uruchomieniu aplikacji dopisz do linku /addPosts                                                                      | Strona nie zostanie przekierowana na podaną, ponieważ warunki nie zostału spełnione |
@@ -77,4 +78,14 @@ Wyniki testów odpalają się domyślnie w przeglądarce chrome:
 | TC_09       | Zakupienie butów.                                              | 1. Wejście w ogłoszenia.<br/> 2. Wybranie butów.<br/> 3. Kliknięcie przycisku "zakup"                                         | Post zostanie usunięty z ogłoszeń                                                   |
 | TC_10       | Edytowanie danych z ogłoszeń                                   | 1. Wybranie ogłoszenia.<br/> 2. Kliknięcie przycisk "Edytuj".<br/> 3. Zmiana danych. Potwierdzając przyciskiem aktualizuj.    | Konto użytkownika nie zostanie utworzone.                                           |
 
-1. Przy uruchomieniu aplikacji dopisz do linku /addPosts 
+
+## Technologie użyte w projekcie:
+* ###   JavaScript
+* ###  Angular
+* ###  Node.js
+* ###  HTML
+* ###  CSS
+* ###  RxJS
+* ###  Jest
+* ###  Jasmin
+
