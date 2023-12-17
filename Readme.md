@@ -52,7 +52,7 @@ Wyniki testów odpalają się domyślnie w przeglądarce chrome:
 
 ```npm test```
 
-![Testy](./itest.png)
+![Testy](./itest2.png)
 ## Scenariusze:
 
 | Test Case ID | Opis                                                           | Kroki testowe                                                                                                                 | Oczekiwany wynik                                                                    |
