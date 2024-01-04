@@ -78,6 +78,31 @@ Wyniki testów odpalają się domyślnie w przeglądarce chrome:
 | TC_19       | Zmiana opisu dla ogłoszenia                                             | 1. Wybranie ogłoszenia.<br/>2 Kliknięcie przycisk "Edytuj". <br/>3. Zmiana opisu dla ogłoszenia.                                         | Zmiana opisu dla ogłoszenia                                                   |
 | TC_20       | Zmiana rozmiaru butów dla ogłoszenia                                 | 1. Wybranie ogłoszenia.<br/>2 Kliknięcie przycisk "Edytuj". <br/>3. Zmiana rozmiaru dla ogłoszenia.    | Zmiana rozmiaru butów dla ogłoszenia                                          |
 
+## Dokumentacja Api:
+* ### Adres usługi: ```/api/posts```,
+* ### Typ: POST,
+* ### Przyjmuje: ```{"title": "string", "image": "string", "text": "string", "rozmiar": "string", "price": "string"}```,
+* ### Zwraca: Status operacji oraz obiekt posta.
+---
+* ### Adres usługi: ```/api/posts```,
+* ### Typ:  PUT,
+* ### Przyjmuje: ```{"title": "string", "image": "string", "text": "string", "rozmiar": "string", "price": "string"}```,
+* ### Zwraca: Status operacji oraz obiekt posta. 
+---
+* ### Adres usługi: ```/api/posts/:id```,
+* ### Typ:  GET,
+* ### Przyjmuje: ```{"id": "string"}```,
+* ### Zwraca: Obiekt posta o określonym ID.
+---
+* ### Adres usługi: ```/api/posts```,
+* ### Typ:  GET,
+* ### Przyjmuje: ```{}```,
+* ### Zwraca: Wszystkie obiekty postów.
+---
+* ### Adres usługi: ```/api/posts/:id```,
+* ### Typ:  DELETE,
+* ### Przyjmuje: ```{"id": "string"}```,
+* ### Zwraca: Status operacji oraz obiekt usuniętego posta.
 
 ## Technologie użyte w projekcie:
 * ###   JavaScript
